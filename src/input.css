@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-cream text-charcoal font-sans antialiased; }
+  :focus-visible { @apply outline-none ring-4 ring-leaf-500/40 rounded-lg; }
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-bold transition duration-200 min-h-[48px]; }
+  .btn-primary { @apply btn bg-apple-500 text-white shadow-lg shadow-apple-500/25 hover:bg-apple-600 hover:-translate-y-0.5; }
+  .btn-secondary { @apply btn bg-white text-leaf-700 ring-2 ring-leaf-500/30 hover:ring-leaf-500 hover:-translate-y-0.5; }
+  .eyebrow { @apply font-hand text-2xl text-apple-500; }
+  .section-title { @apply font-display text-4xl sm:text-5xl font-semibold tracking-tight text-leaf-800; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
